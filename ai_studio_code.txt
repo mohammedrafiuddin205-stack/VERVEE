@@ -1,0 +1,21 @@
+{
+    "name": "VERVE Android Dev",
+    "image": "mcr.microsoft.com/devcontainers/java:1-17-bookworm",
+    "updateContentCommand": "chmod +x .devcontainer/setup-sdk.sh && bash .devcontainer/setup-sdk.sh",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "java.configuration.updateBuildConfiguration": "automatic"
+            },
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "naco-siren.gradle-language",
+                "mathiasfrohlich.Kotlin"
+            ]
+        }
+    },
+    "remoteEnv": {
+        "ANDROID_HOME": "/home/vscode/android-sdk",
+        "PATH": "${containerEnv:PATH}:/home/vscode/android-sdk/cmdline-tools/latest/bin:/home/vscode/android-sdk/platform-tools"
+    }
+}
